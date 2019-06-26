@@ -17,5 +17,5 @@ describe('index.html', (done) => {
       done();
       window.close();
     });
-  })
-})
+  });
+});
