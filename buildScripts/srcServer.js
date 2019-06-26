@@ -4,6 +4,8 @@ import open from 'open';
 import webpack from 'webpack';
 import config from '../webpack.config.dev';
 
+/* eslint-disable no-console */
+
 const port = 5500;
 const app = express();
 const compiler = webpack(config);
@@ -14,7 +16,7 @@ app.use(require('webpack-dev-middleware')(compiler, {
 }));
 
 app.get('/', function(req, res) {
-  res.sendFile(path.join(__dirname, '../src/index.js'));
+  res.sendFile(path.join(__dirname, '../src/index.html'));
 });
 
 app.listen(port, function(err) {
